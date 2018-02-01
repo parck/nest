@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/android/android.iml" filepath="$PROJECT_DIR$/android/android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mvc/mvc.iml" filepath="$PROJECT_DIR$/mvc/mvc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nest.iml" filepath="$PROJECT_DIR$/nest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/swagger/swagger.iml" filepath="$PROJECT_DIR$/swagger/swagger.iml" />
+    </modules>
+  </component>
+</project>

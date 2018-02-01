@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="android" />
+        <module name="mvc" />
+        <module name="swagger" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="android" target="1.5" />
+      <module name="mvc" target="1.5" />
+      <module name="nest" target="1.5" />
+      <module name="nestful" target="1.5" />
+      <module name="swagger" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
