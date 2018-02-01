@@ -17,6 +17,7 @@
       <module name="nest" target="1.5" />
       <module name="nestful" target="1.5" />
       <module name="swagger" target="1.5" />
+      <module name="view" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
