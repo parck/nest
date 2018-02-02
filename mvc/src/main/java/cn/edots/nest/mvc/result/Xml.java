@@ -15,6 +15,10 @@ public class Xml<T> implements Serializable {
     protected T data;
     protected String message;
 
+    public static Xml SUCCESS = new Xml(200);
+    public static Xml FAIL= new Xml(400);
+    public static Xml FORBID= new Xml(405);
+
     public Xml() {
     }
 
@@ -35,8 +39,9 @@ public class Xml<T> implements Serializable {
         return message;
     }
 
-    public void setMessage(String message) {
+    public Xml setMessage(String message) {
         this.message = message;
+        return this;
     }
 
     @XmlElement
@@ -44,8 +49,9 @@ public class Xml<T> implements Serializable {
         return code;
     }
 
-    public void setCode(int code) {
+    public Xml setCode(int code) {
         this.code = code;
+        return this;
     }
 
     @XmlElement
@@ -53,8 +59,9 @@ public class Xml<T> implements Serializable {
         return success;
     }
 
-    public void setSuccess(boolean success) {
+    public Xml setSuccess(boolean success) {
         this.success = success;
+        return this;
     }
 
     @XmlElement
@@ -62,7 +69,8 @@ public class Xml<T> implements Serializable {
         return data;
     }
 
-    public void setData(T data) {
+    public Xml setData(T data) {
         this.data = data;
+        return this;
     }
 }
