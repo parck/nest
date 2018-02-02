@@ -26,7 +26,6 @@ public class Xml<T> implements Serializable {
     }
 
     public Xml() {
-
     }
 
     public Xml(int code) {
@@ -46,8 +45,9 @@ public class Xml<T> implements Serializable {
         return message;
     }
 
-    public void setMessage(String message) {
+    public Xml setMessage(String message) {
         this.message = message;
+        return this;
     }
 
     @XmlElement
@@ -55,8 +55,9 @@ public class Xml<T> implements Serializable {
         return code;
     }
 
-    public void setCode(int code) {
+    public Xml setCode(int code) {
         this.code = code;
+        return this;
     }
 
     @XmlElement
@@ -64,8 +65,9 @@ public class Xml<T> implements Serializable {
         return success;
     }
 
-    public void setSuccess(boolean success) {
+    public Xml setSuccess(boolean success) {
         this.success = success;
+        return this;
     }
 
     @XmlElement
@@ -73,7 +75,8 @@ public class Xml<T> implements Serializable {
         return data;
     }
 
-    public void setData(T data) {
+    public Xml setData(T data) {
         this.data = data;
+        return this;
     }
 }

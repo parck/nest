@@ -42,32 +42,36 @@ public class Json<T> implements Serializable {
         return message;
     }
 
-    public void setMessage(String message) {
+    public Json setMessage(String message) {
         this.message = message;
+        return this;
     }
 
     public int getCode() {
         return code;
     }
 
-    public void setCode(int code) {
+    public Json setCode(int code) {
         this.code = code;
+        return this;
     }
 
     public boolean isSuccess() {
         return success;
     }
 
-    public void setSuccess(boolean success) {
+    public Json setSuccess(boolean success) {
         this.success = success;
+        return this;
     }
 
     public T getData() {
         return data;
     }
 
-    public void setData(T data) {
+    public Json setData(T data) {
         this.data = data;
+        return this;
     }
 
     @Override
