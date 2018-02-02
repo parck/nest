@@ -13,15 +13,9 @@ public class Json<T> implements Serializable {
     protected T data;
     protected String message;
 
-    public static Json SUCCESS;
-    public static Json FAIL;
-    public static Json FORBID;
-
-    static {
-        SUCCESS = new Json(200);
-        FAIL = new Json(400);
-        FORBID = new Json(405);
-    }
+    public static Json SUCCESS = new Json(200);
+    public static Json FAIL = new Json(400);
+    public static Json FORBID = new Json(405);
 
     public Json() {
     }
