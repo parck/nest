@@ -10,15 +10,38 @@ import java.io.Serializable;
 @XmlAccessorType(XmlAccessType.NONE)
 public class Xml<T> implements Serializable {
 
-    @XmlElement
-    private String message;
-    @XmlElement
-    private int code;
-    @XmlElement
-    private boolean success;
-    @XmlElement
-    private T data;
+    protected int code = 400;
+    protected boolean success;
+    protected T data;
+    protected String message;
 
+    public static Xml SUCCESS;
+    public static Xml FAIL;
+    public static Xml FORBID;
+
+    static {
+        SUCCESS = new Xml(200);
+        FAIL = new Xml(400);
+        FORBID = new Xml(405);
+    }
+
+    public Xml() {
+
+    }
+
+    public Xml(int code) {
+        this.code = code;
+        this.success = code == 200;
+    }
+
+    public Xml(int code, T data, String message) {
+        this.code = code;
+        this.success = code == 200;
+        this.data = data;
+        this.message = message;
+    }
+
+    @XmlElement
     public String getMessage() {
         return message;
     }
@@ -27,6 +50,7 @@ public class Xml<T> implements Serializable {
         this.message = message;
     }
 
+    @XmlElement
     public int getCode() {
         return code;
     }
@@ -35,6 +59,7 @@ public class Xml<T> implements Serializable {
         this.code = code;
     }
 
+    @XmlElement
     public boolean isSuccess() {
         return success;
     }
@@ -43,6 +68,7 @@ public class Xml<T> implements Serializable {
         this.success = success;
     }
 
+    @XmlElement
     public T getData() {
         return data;
     }

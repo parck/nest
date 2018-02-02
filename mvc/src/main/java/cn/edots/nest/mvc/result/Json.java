@@ -2,15 +2,41 @@ package cn.edots.nest.mvc.result;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import javax.swing.plaf.PanelUI;
 import java.io.IOException;
 import java.io.Serializable;
 
 public class Json<T> implements Serializable {
 
-    private String message;
-    private int code;
-    private boolean success;
-    private T data;
+    protected int code = 400;
+    protected boolean success;
+    protected T data;
+    protected String message;
+
+    public static Json SUCCESS;
+    public static Json FAIL;
+    public static Json FORBID;
+
+    static {
+        SUCCESS = new Json(200);
+        FAIL = new Json(400);
+        FORBID = new Json(405);
+    }
+
+    public Json() {
+    }
+
+    public Json(int code) {
+        this.code = code;
+        this.success = code == 200;
+    }
+
+    public Json(int code, T data, String message) {
+        this.code = code;
+        this.success = code == 200;
+        this.data = data;
+        this.message = message;
+    }
 
     public String getMessage() {
         return message;
