@@ -15,9 +15,7 @@
     <url>http://maven.apache.org</url>
 
     <properties>
-        <spring.version>4.3.9.RELEASE</spring.version>
-        <security.version>4.2.3.RELEASE</security.version>
-        <hibernate.version>5.2.10.Final</hibernate.version>
+        <spring.version>5.0.3.RELEASE</spring.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
