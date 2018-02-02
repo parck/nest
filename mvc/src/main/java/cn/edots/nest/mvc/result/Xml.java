@@ -15,9 +15,9 @@ public class Xml<T> implements Serializable {
     protected T data;
     protected String message;
 
-    public static Xml SUCCESS = new Xml(200);
-    public static Xml FAIL= new Xml(400);
-    public static Xml FORBID= new Xml(405);
+//    public static Xml SUCCESS = new Xml(200);
+//    public static Xml FAIL= new Xml(400);
+//    public static Xml FORBID= new Xml(405);
 
     public Xml() {
     }
