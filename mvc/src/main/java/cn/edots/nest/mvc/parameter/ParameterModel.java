@@ -12,18 +12,6 @@ import java.io.Serializable;
  */
 public class ParameterModel implements Serializable {
 
-    private static final long serialVersionUID = 8451098364352725403L;
-
-    private String name;
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     @Override
     public String toString() {
         ObjectMapper objectMapper = new ObjectMapper();

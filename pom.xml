@@ -6,7 +6,6 @@
     <artifactId>nest</artifactId>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>android</module>
         <module>mvc</module>
         <module>swagger</module>
     </modules>

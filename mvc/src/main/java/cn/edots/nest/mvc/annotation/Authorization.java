@@ -1,4 +1,4 @@
-package cn.edots.nest.mvc.interceptor;
+package cn.edots.nest.mvc.annotation;
 
 import java.lang.annotation.*;
 
