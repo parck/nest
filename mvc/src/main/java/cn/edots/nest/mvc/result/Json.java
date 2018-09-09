@@ -1,8 +1,8 @@
 package cn.edots.nest.mvc.result;
 
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import javax.swing.plaf.PanelUI;
 import java.io.IOException;
 import java.io.Serializable;
 
@@ -15,7 +15,8 @@ public class Json<T> implements Serializable {
 
     public static Json SUCCESS = new Json(200);
     public static Json FAIL = new Json(400);
-    public static Json FORBID = new Json(405);
+    public static Json EXPIRES = new Json(401);
+    public static Json FORBID = new Json(403);
 
     public Json() {
     }
@@ -23,6 +24,8 @@ public class Json<T> implements Serializable {
     public Json(int code) {
         this.code = code;
         this.success = code == 200;
+        this.data = null;
+        this.message = null;
     }
 
     public Json(int code, T data, String message) {
