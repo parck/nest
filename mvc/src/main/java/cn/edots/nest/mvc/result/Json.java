@@ -13,19 +13,14 @@ public class Json<T> implements Serializable {
     protected T data;
     protected String message;
 
-    public static Json SUCCESS = new Json(200);
-    public static Json FAIL = new Json(400);
-    public static Json EXPIRES = new Json(401);
-    public static Json FORBID = new Json(403);
-
     public Json() {
     }
 
-    public Json(int code) {
+    public Json(int code, String message) {
         this.code = code;
         this.success = code == 200;
+        this.message = message;
         this.data = null;
-        this.message = null;
     }
 
     public Json(int code, T data, String message) {
@@ -33,6 +28,22 @@ public class Json<T> implements Serializable {
         this.success = code == 200;
         this.data = data;
         this.message = message;
+    }
+
+    public static Json SUCCESS() {
+        return new Json(200, "OK");
+    }
+
+    public static Json FAIL(String message) {
+        return new Json(400, message);
+    }
+
+    public static Json EXPIRES() {
+        return new Json(401, "登录过期");
+    }
+
+    public static Json FORBID(String message) {
+        return new Json(403, message);
     }
 
     public String getMessage() {
