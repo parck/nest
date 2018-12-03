@@ -14,6 +14,7 @@ public class Xml<T> implements Serializable {
     protected boolean success;
     protected T data;
     protected String message;
+    protected String token;
 
     public static Xml SUCCESS = new Xml(200);
     public static Xml FAIL= new Xml(400);
@@ -71,6 +72,16 @@ public class Xml<T> implements Serializable {
 
     public Xml setData(T data) {
         this.data = data;
+        return this;
+    }
+
+    @XmlElement
+    public String getToken() {
+        return token;
+    }
+
+    public Xml setToken(String token) {
+        this.token = token;
         return this;
     }
 }
