@@ -13,6 +13,7 @@ public class Json<T> implements Serializable {
     protected T data;
     protected String message;
     protected String token;
+    protected String command;
 
     public Json() {
     }
@@ -89,6 +90,15 @@ public class Json<T> implements Serializable {
 
     public Json setToken(String token) {
         this.token = token;
+        return this;
+    }
+
+    public String getCommand() {
+        return command;
+    }
+
+    public Json setCommand(String command) {
+        this.command = command;
         return this;
     }
 

@@ -15,17 +15,16 @@ public class Xml<T> implements Serializable {
     protected T data;
     protected String message;
     protected String token;
-
-    public static Xml SUCCESS = new Xml(200);
-    public static Xml FAIL= new Xml(400);
-    public static Xml FORBID= new Xml(405);
+    protected String command;
 
     public Xml() {
     }
 
-    public Xml(int code) {
+    public Xml(int code, String message) {
         this.code = code;
         this.success = code == 200;
+        this.message = message;
+        this.data = null;
     }
 
     public Xml(int code, T data, String message) {
@@ -33,6 +32,22 @@ public class Xml<T> implements Serializable {
         this.success = code == 200;
         this.data = data;
         this.message = message;
+    }
+
+    public static Xml SUCCESS() {
+        return new Xml(200, "OK");
+    }
+
+    public static Xml FAIL(String message) {
+        return new Xml(400, message);
+    }
+
+    public static Xml EXPIRES() {
+        return new Xml(401, "登录过期");
+    }
+
+    public static Xml FORBID(String message) {
+        return new Xml(403, message);
     }
 
     @XmlElement
@@ -82,6 +97,16 @@ public class Xml<T> implements Serializable {
 
     public Xml setToken(String token) {
         this.token = token;
+        return this;
+    }
+
+    @XmlElement
+    public String getCommand() {
+        return command;
+    }
+
+    public Xml setCommand(String command) {
+        this.command = command;
         return this;
     }
 }
